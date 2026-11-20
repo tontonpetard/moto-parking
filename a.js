@@ -2,7 +2,7 @@ const TOKYO=[35.681,139.767];
 const ENDPOINTS=["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter","https://maps.mail.ru/osm/tools/overpass/api/interpreter"];
 const $=s=>document.querySelector(s);
 const map=L.map('map',{zoomControl:false}).setView(TOKYO,15);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'Tiles © Esri · Data © OpenStreetMap'}).addTo(map);
 const layer=L.layerGroup().addTo(map);
 let me=null,meMarker=null,circle=null,spots=[],markers={},watchId=null,lastFetch=null,ctl=null;
 const say=t=>$('#status').textContent=t;
